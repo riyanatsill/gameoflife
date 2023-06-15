@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+    <link rel="icon" type="image" sizes="32x32" href="images/favicon-32x32.png"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sign-in.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+<script src="js/config.js"></script>
+</head>
+<body style="background-color: #778899;">
+    <nav class="navbar fixed-top bg-dark navbar-expand-lg" style=" padding: 1%;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;" >
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color: white;padding-left: 10%; font-family: Rockwell;" href="home.html">
+                <img src="images/logo2.png" alt="Bootstrap" width="35" height="35">
+                Game of Life
+            </a>
+          <button class="navbar-toggler bg-light" style="background-color: #376E6F;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+          </button>
+          <div class="collapse navbar-collapse" style="padding-right: 5%;" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item" style="color: white;">
+                <a class="nav-link" href="home.html" style="font-family: sans-serif;">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+<main class="form-signin w-100 m-auto">
+    <form id="password-update-form">
+        <h1 class="h3 mb-3 fw-normal" style="text-align: center; color: white;">PROFILE</h1>
+
+        <div class="form-floating" >
+            <input type="text" name="username" class="form-control" id="username" placeholder="Username" readonly>
+            <label for="username">Username</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="Email" readonly>
+            <label for="username">Email</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control" id="newPasswordInput" placeholder="password">
+            <label for="newPasswordInput">Password</label>
+        </div>
+        <br>
+        <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Update</button>
+    </form>
+</main>
+<script src="js/profile.js"></script>
+</body>
+</html>

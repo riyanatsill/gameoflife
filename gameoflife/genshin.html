@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genshin Impact</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="js/config.js"></script>
+</head>
+
+<body style="background-color: whitesmoke">
+    <nav id="navbarr" class="col-12 navbar bg-dark fixed-top navbar-expand-lg" style="padding: 1%;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;" >
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color: white;padding-left: 10%; font-family: Rockwell;">
+            <img src="images/logo2.png" alt="Bootstrap" width="35" height="35">
+            Game of Life</a>
+          <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+          </button>
+          <div class="collapse navbar-collapse" style="padding-right: 5%;" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item" style="color: white;">
+                <a class="nav-link" href="home.html" style="font-family: sans-serif;">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pricelist.html" style="font-family: sans-serif;">PRICE LIST</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class=" col-12 card-image">
+        
+            <img src="images/gi.png" alt="" style="width: 100%;">
+        
+    </div>
+
+    <div class="col-12 container">
+        <form class="row" id="genshinForm" style="font-family: 'sans-serif'; text-align: center;color: black;padding-top: 2%;">
+            <div class="col-md-4">
+                <h5 style="font-weight: bold;">CARA MEMBELI Genesis Crystal</h5>
+                <h5 style="font-weight: bold;">Genshin Impact</h5>
+                <p style="text-align: left;">1. Masukkan ID dan pilih server akun kalian</p>
+                <p style="text-align: left;">2. Pilih Nominal GC yang diinginkan</p>
+                <p style="text-align: left;">3. Pilih Metode Pembayaran</p>
+                <p style="text-align: left;">4. Masukkan alamat e-mail kalian untuk rincian pesanan</p>
+                <p style="text-align: left;">5. Konfirmasi dan pastikan membayar dengan Jumlah Total Harga yang benar</p>
+                <p style="text-align: left;">6. Tunggu sampai 1-15 Menit. GC akan masuk secepat kilat</p>
+                <p style="text-align: left;">(Mohon kesediannya menunggu, GC diproses secara manual maka disesuaikan dengan antrian)</p>
+            </div>
+            <div class="col-md-8" style="padding-bottom: 2%;">
+                <div class="row background-data" style="font-family: 'sans-serif'; text-align: center; padding-bottom: 3%; color: black;">
+                    <h1 style="padding-bottom: 1%;">Masukan Data Anda</h1>
+                    <div class="col-md-6 center">
+                        <div class="input-group mb-3">
+                            <input type="number" id="uid" class="form-control" placeholder="UID" aria-label="Username">
+                            <span class="input-group-text">123</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 center">
+                        <div class="input-group mb-3">
+                        <select class="form-select" id="nama">
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="America">America</option>
+                            <option value="Australia">Australia</option>
+                            </select>
+                            <label class="input-group-text" for="nama">Choose the Server</label>
+                         </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 " style="color: black;padding-top: 2%;">
+                    <div class="row background-data">
+                        <h2>Pilihan Anda</h2>
+                        <div class="col-12 container2 ">
+                            <div class="row">
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>100 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 10.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="100 Genesis Crystal" id="x" width="75%">
+                                </div>
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x2">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>250 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 22.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="250 Genesis Crystal" id="x2" width="75%">
+                                </div>
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x3">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>500 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 50.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="500 Genesis Crystal" id="x3" width="75%">
+                                </div>
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x4">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>780 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 75.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="780 Genesis Crystal" id="x4" width="75%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 container2">
+                            <div class="row">
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x5">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>1500 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 145.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="1500 Genesis Crystal" id="x5" width="75%">
+                                </div>
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x6">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>2100 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 200.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="2100 Genesis Crystal" id="x6" width="75%">
+                                </div>
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x7">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>2700 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 260.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="2700 Genesis Crystal" id="x7" width="75%">
+                                </div>
+                                <div class="col-md-3 border-pilihan">
+                                    <label for="x8">
+                                        <img src="images/gc.png" width="75%" alt="">
+                                        <p>3500 Genesis Crystal</p>
+                                        <p style="font-style: italic;">Rp. 400.000</p>
+                                    </label>
+                                    <input type="radio" name="price" value="3500 Genesis Crystal" id="x8" width="75%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12" style="padding-top: 2%;padding-bottom: 3%;">
+                    <div class="row background-data" style="padding-bottom: 2%;color: black;">
+                        <h2>Pembayaran</h2>
+                        <div class="col-md-6 center wkwk">
+                                <label for="y">
+                                <img src="images/BCAA.png" width="100%">
+                            </label>
+                                <input type="radio" name="payment" value="BCA" id="y">                       
+                        </div>
+                        <div class="col-md-6 center wkwk">
+                                <label for="y2">
+                                <img src="images/mandiri.png" width="100%">
+                            </label>
+                                <input type="radio" name="payment" value="Mandiri" id="y2">
+                        </div>
+                        <div class="col-md-6 center wkwk">
+                                <label for="y3">
+                                <img src="images/ovo.png" width="100%">
+                                </label>
+                                <input type="radio" name="payment" value="OVO" id="y3">
+                        </div>
+                        <div class="col-md-6 center wkwk">
+                                <label for="y4">
+                                <img src="images/sp.png" width="100%">
+                            </label>
+                                <input type="radio" name="payment" value="Shopeepay" id="y4">
+                        </div>
+                        <div class="col-md-6 center wkwk">
+                                <label for="y5">
+                                <img src="images/Gopay.png" width="100%">
+                            </label>
+                                <input type="radio" name="payment" value="Gopay" id="y5">
+                        </div>
+                        <div class="col-md-6 center wkwk">
+                                <label for="y6">
+                                <img src="images/dana.png" width="100%">
+                            </label>
+                                <input type="radio" name="payment" value="Dana" id="y6">
+                        </div>
+                    </div>                  
+                </div>
+
+                <div class="row background-data" style="font-family: 'sans-serif'; text-align: center; color: black;">
+                    <h1 style="padding-bottom: 1%;">Masukan Alamat Email Anda</h1>
+                    <div class="col-md-12 center">
+                        <div class="input-group mb-3">
+                            <input type="email" value="" id="gmail" class="form-control" placeholder="Email" aria-label="Gmail">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="hidden" class="form-control form-control-user" id="game" value="Genshin Impact">
+                        </div>
+                        <div class="center" style="padding-bottom: 1%;">
+                            <button class="btn btn-primary" type="submit" style="width: 100%;text-align: center;background-color: black;color: white;">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <script src="js/genshin.js"></script>
+    </div>
+    <footer>
+        <div class="col-12 contact">
+          <div class="row" style="font-family: sans-serif;">
+              <div class="col-md-6" style="text-align: center;">
+                <img src="images/logo.png" alt="Slide 3">
+                <h4 style="font-weight: bold;color: whitesmoke;font-family: 'Roboto', sans-serif;padding-top: 1%;">GAMEOFLIFE</h4>
+              </div>
+              <div class="col-md-6" style="text-align: center;">
+                <h4 style="font-family: 'Roboto', sans-serif;color: whitesmoke;">SOCIAL MEDIA</h4>
+                <a href="https://www.instagram.com/valorantid/" target="_blank" rel="noopener noreferrer"><img src="images/ig.png" alt=""></a>
+                <a href="https://wa.me/6287884541593" target="_blank" rel="noopener noreferrer"><img src="images/WA2.png" alt=""></a>
+                <a href="https://twitter.com/ValorINTEL" target="_blank" rel="noopener noreferrer"><img src="images/twitter.png" alt=""></a>
+              </div>
+              <div class="col-12" id="copyright" style="text-align: center;color: aliceblue;font-family: sans-serif;padding-top: 2%;">
+                &copy;2023 GAMEOFLIFE. All Rights Reserved
+            </div>
+          </div>
+      </div>
+      </footer>
+</body>
+<script src="js/js.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+</html>

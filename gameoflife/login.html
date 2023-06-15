@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="`en`">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sign-in.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+<script src="js/config.js"></script>
+</head>
+
+<body class="text-center" style="background-color: #778899">
+<main class="form-signin w-100 m-auto">
+    <form id="loginForm">
+      <img class="mb-4" src="images/logoG2.png" alt="" width="50%" style="border-radius: 20px;padding-bottom: 4%;">
+        <div class="form-floating" >
+            <input type="text" name="username" class="form-control" id="floatingInput" placeholder="username">
+            <label for="floatingInput">Username</label>
+        </div>
+        <br>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <br>
+        <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Sign in</button>
+        <p style="color: white;">Don't have an account? <a href="register.html">Register</a></p>
+        <p class="mt-5 mb-3 text-muted">&copy;2023 GAMEOFLIFE</p>
+    </form>
+</main>
+<script src="js/login.js"></script>
+        
+</body>
+</html>

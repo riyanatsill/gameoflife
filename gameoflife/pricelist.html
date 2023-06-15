@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price List</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="js/config.js"></script>
+</head>
+
+<body style="background-color: whitesmoke">
+    <nav class="navbar fixed-top bg-dark navbar-expand-lg" style=" padding: 1%;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;" >
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color: white;padding-left: 10%; font-family: Rockwell;" href="home.html">
+                <img src="images/logo2.png" alt="Bootstrap" width="35" height="35">
+                Game of Life
+            </a>
+          <button class="navbar-toggler bg-light" style="background-color: #376E6F;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" ></span>
+          </button>
+          <div class="collapse navbar-collapse" style="padding-right: 5%;" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item" style="color: white;">
+                <a class="nav-link" href="home.html" style="font-family: sans-serif;">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+<br>
+<br>
+<br>
+    <div class="col-12 container" style="font-family: 'Roboto', sans-serif;">
+        <div class="row" style="text-align: center;color: black;padding-top: 2%;">      
+            <div class="col-md-3">
+                    <a href="valorant.html"><img src="images/valorant.jpg" alt="Slide 3" style="width:50%;"></a>
+                <div class="judul-produk" style="font-family: 'Roboto', sans-serif;color: black;">Valorant</div>
+            </div>
+
+            <div class="col-md-9">
+                    <table id="tb_valo" class="table table-white">
+                        <tr>
+                            <th width="10%">Produk</th>
+                            <th width="10%">Harga</th>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+   </div>
+   <div class="col-12 container">
+    <div class="row" style="font-family: 'sans-serif'; text-align: center;color: black;padding-top: 2%;">      
+        <div class="col-md-3">
+                <a href="genshin.html"><img src="images/GenshinImpact.jpg" alt="Slide 3" style="width:50%;"></a>
+            <div class="judul-produk" style="font-family: 'Roboto', sans-serif;color: black;">Genshin Impact</div>
+        </div>
+
+        <div class="col-md-9">
+            <table id="tb_genshin" class="table table-white">
+                <tr>
+                    <th width="10%">Produk</th>
+                    <th width="10%">Harga</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-12 container">
+    <div class="row" style="font-family: 'sans-serif'; text-align: center;color: black;padding-top: 2%;">      
+        <div class="col-md-3">
+                <a href="pubgm.html"><img src="images/pubgm.jpg" alt="Slide 3" style="width:50%;"></a>
+            <div class="judul-produk" style="font-family: 'Roboto', sans-serif;color: black;">Pubg Mobile</div>
+        </div>
+
+        <div class="col-md-9">
+            <table id="tb_pubgm" class="table table-white">
+                <tr>
+                    <th width="10%">Produk</th>
+                    <th width="10%">Harga</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-12 container">
+    <div class="row" style="font-family: 'sans-serif'; text-align: center;color: black;padding-top: 2%;">      
+        <div class="col-md-3">
+                <a href="ml.html"><img src="images/mlbb.jpg" alt="Slide 3" style="width:50%;"></a>
+            <div class="judul-produk" style="font-family: 'Roboto', sans-serif;color: black;">Mobile Legend</div>
+        </div>
+
+        <div class="col-md-9">
+            <table id="tb_ml" class="table table-white">
+                <tr>
+                    <th width="10%">Produk</th>
+                    <th width="10%">Harga</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="js/pricelist.js"></script>
+<script>
+    // Check if the user is logged in when the page loads
+    window.addEventListener('load', function() {
+        var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (isLoggedIn !== 'true') {
+          // Redirect to the login page if not logged in
+          location.assign("login.html");
+        }
+      });
+</script>
+<footer>
+    <div class="col-12 contact">
+      <div class="row" style="font-family: sans-serif;">
+          <div class="col-md-6" style="text-align: center;">
+            <img src="images/logo.png" alt="Slide 3">
+            <h4 style="font-weight: bold;color: whitesmoke;font-family: 'Roboto', sans-serif;padding-top: 1%;">GAMEOFLIFE</h4>
+          </div>
+          <div class="col-md-6" style="text-align: center;">
+            <h4 style="font-family: 'Roboto', sans-serif;color: whitesmoke;">SOCIAL MEDIA</h4>
+            <a href="https://www.instagram.com/valorantid/" target="_blank" rel="noopener noreferrer"><img src="images/ig.png" alt=""></a>
+            <a href="https://wa.me/6287884541593" target="_blank" rel="noopener noreferrer"><img src="images/WA2.png" alt=""></a>
+            <a href="https://twitter.com/ValorINTEL" target="_blank" rel="noopener noreferrer"><img src="images/twitter.png" alt=""></a>
+          </div>
+          <div class="col-12" id="copyright" style="text-align: center;color: aliceblue;font-family: sans-serif;padding-top: 2%;">
+            &copy;2023 GAMEOFLIFE. All Rights Reserved
+        </div>
+      </div>
+  </div>
+  </footer>
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+</html>
